@@ -18,17 +18,14 @@ class Button extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final ButtonStyle outlineButtonStyle = OutlinedButton.styleFrom(
+    final ButtonStyle outlineButtonStyle = TextButton.styleFrom(
       primary: darkJungleGreenColor,
       minimumSize: Size(88, 36),
       padding: EdgeInsets.symmetric(horizontal: 16.0),
-      textStyle: TextStyle(color: darkJungleGreenColor),
-      shape: const RoundedRectangleBorder(
-        borderRadius: BorderRadius.all(Radius.circular(2.0)),
-      ),
+      textStyle: TextStyle(color: darkJungleGreenColor, fontSize: 24.0),
     );
 
-    return OutlinedButton(
+    return TextButton(
       style: outlineButtonStyle,
       onPressed: () {},
       child: Text(label),

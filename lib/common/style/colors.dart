@@ -5,6 +5,7 @@ const darkJungleGreenColor = Color(0xFF041F1E);
 const copperCrayolaColor = MaterialColor(0xFFC57B57, _colorCodes);
 const tumbleweedColor = Color(0xFFF1AB86);
 const peachColor = Color(0xFFF7DBA7);
+const whiteSmokeColor = Color(0xFFF4F3F3);
 
 const Map<int, Color> _colorCodes = {
   50: Color.fromRGBO(147, 205, 72, .1),

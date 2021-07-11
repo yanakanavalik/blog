@@ -15,9 +15,11 @@ class _MenuState extends State<Menu> {
         MenuItem(
           onTap: () {},
         ),
+        const SizedBox(height: 40.0),
         MenuItem(
           onTap: () {},
         ),
+        const SizedBox(height: 40.0),
         MenuItem(
           onTap: () {},
         ),
