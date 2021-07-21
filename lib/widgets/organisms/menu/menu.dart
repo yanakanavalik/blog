@@ -13,14 +13,20 @@ class _MenuState extends State<Menu> {
     return Column(
       children: [
         MenuItem(
+          label: 'About author',
+          onTap: () => Navigator.pushNamed(
+            context,
+            '/about-author',
+          ),
+        ),
+        const SizedBox(height: 40.0),
+        MenuItem(
+          label: 'Menu item',
           onTap: () {},
         ),
         const SizedBox(height: 40.0),
         MenuItem(
-          onTap: () {},
-        ),
-        const SizedBox(height: 40.0),
-        MenuItem(
+          label: 'Menu item',
           onTap: () {},
         ),
       ],
@@ -30,16 +36,19 @@ class _MenuState extends State<Menu> {
 
 class MenuItem extends StatelessWidget {
   MenuItem({
+    required this.label,
     required this.onTap,
   });
 
+  final String label;
   final void Function() onTap;
 
   @override
   Widget build(BuildContext context) {
     return Button(
       buttonModification: ButtonModification.menu,
-      label: 'label',
+      label: label,
+      onTap: onTap,
     );
   }
 }

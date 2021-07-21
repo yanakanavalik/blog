@@ -1,5 +1,17 @@
 {
     "header": {
         "title": "Blog by Yana Kanavalik"
+    },
+    "aboutAuthorPage": {
+        "title": "About author",
+        "greetingPart": ""
+    },
+    "menu": {
+        "aboutAuthor": "About author" 
+    },
+    "notFoundPage": {
+        "title": "Not found",
+        "description": "We really tried to find :c",
+        "toTheMainPageButtonTitle": "Go to home page" 
     }
 }
