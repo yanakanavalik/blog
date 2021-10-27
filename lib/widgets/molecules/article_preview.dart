@@ -14,12 +14,15 @@ class ArticlePreview extends StatelessWidget {
         children: [
           Text(
             'Title of article',
-            style: TextStyle(color: peachColor, fontWeight: FontWeight.bold),
+            style:
+                TextStyle(color: tumbleweedColor, fontWeight: FontWeight.bold),
           ),
+          const SizedBox(height: 8.0),
           Text(
             'Date when was written',
             style: TextStyle(color: darkJungleGreenColor),
           ),
+          const SizedBox(height: 8.0),
           Text(
             'Summary',
             style: TextStyle(color: darkJungleGreenColor),

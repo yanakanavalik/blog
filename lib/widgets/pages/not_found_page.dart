@@ -1,11 +1,7 @@
 import 'package:blog/common/style/colors.dart';
-import 'package:blog/common/utils/screen.dart';
-
-import 'package:blog/widgets/organisms/menu/menu.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class NotFoundPage extends StatefulWidget {
   NotFoundPage({Key? key}) : super(key: key);
@@ -21,7 +17,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        title: Text('notFoundPage.title').tr(),
+        title: Text('Page not Found'),
         backgroundColor: copperCrayolaColor,
       ),
       body: Stack(
@@ -32,7 +28,7 @@ class _NotFoundPageState extends State<NotFoundPage> {
               width: double.infinity,
               child: Column(
                 children: [
-                  Text('notFoundPage.description').tr(),
+                  Text('Page not found. Please, try again.'),
                   const SizedBox(height: 24.0),
                 ],
               ),

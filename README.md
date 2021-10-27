@@ -8,4 +8,3 @@ Project has being written with atomic design principles.
 
 Checkmarks:
 - Navigator 1.0;
-- 

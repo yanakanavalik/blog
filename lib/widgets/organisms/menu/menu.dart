@@ -1,4 +1,4 @@
-import 'package:blog/widgets/atoms/button.dart';
+import 'package:blog/widgets/atoms/menu_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
@@ -12,43 +12,27 @@ class _MenuState extends State<Menu> {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        MenuItem(
-          label: 'About author',
-          onTap: () => Navigator.pushNamed(
+        MenuButton(
+          () => Navigator.pushNamed(
             context,
             '/about-author',
           ),
+          label: 'About author',
         ),
         const SizedBox(height: 40.0),
-        MenuItem(
-          label: 'Menu item',
-          onTap: () {},
+        MenuButton(
+          () => Navigator.pushNamed(
+            context,
+            '/doggy-bloggy',
+          ),
+          label: 'Doggy bloggy',
         ),
         const SizedBox(height: 40.0),
-        MenuItem(
+        MenuButton(
+          () {},
           label: 'Menu item',
-          onTap: () {},
         ),
       ],
-    );
-  }
-}
-
-class MenuItem extends StatelessWidget {
-  MenuItem({
-    required this.label,
-    required this.onTap,
-  });
-
-  final String label;
-  final void Function() onTap;
-
-  @override
-  Widget build(BuildContext context) {
-    return Button(
-      buttonModification: ButtonModification.menu,
-      label: label,
-      onTap: onTap,
     );
   }
 }

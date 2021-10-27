@@ -1,8 +1,8 @@
 import 'package:blog/widgets/molecules/article_preview.dart';
 import 'package:blog/widgets/organisms/page_container/index.dart';
+import 'package:blog/widgets/pages/home/socials.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-import 'package:easy_localization/easy_localization.dart';
 
 class HomePage extends StatefulWidget {
   HomePage({Key? key}) : super(key: key);
@@ -18,7 +18,7 @@ class _HomePageState extends State<HomePage> {
   Widget build(BuildContext context) {
     return PageContainer(
       pageBody: HomePageBody(),
-      pageTitle: 'header.title'.tr(),
+      pageTitle: 'Blog by Yana Kanavalik',
     );
   }
 }
@@ -28,16 +28,21 @@ class HomePageBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Column(
       children: [
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
-        ArticlePreview(),
+        Column(
+          children: [
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+            ArticlePreview(),
+          ],
+        ),
+        Socials(),
       ],
     );
   }

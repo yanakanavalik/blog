@@ -28,6 +28,7 @@ class _PageContainerState extends State<PageContainer> {
         title: Text(widget.pageTitle),
         backgroundColor: copperCrayolaColor,
       ),
+      backgroundColor: Colors.white,
       body: Stack(
         children: [
           SingleChildScrollView(
@@ -39,7 +40,7 @@ class _PageContainerState extends State<PageContainer> {
           ),
           Positioned(
             left: 40.0,
-            top: getScreenHeight(context: context) / 2.5,
+            top: getScreenHeight(context: context) / 4.0,
             child: Menu(),
           ),
         ],

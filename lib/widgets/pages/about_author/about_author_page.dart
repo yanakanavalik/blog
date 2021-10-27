@@ -1,26 +1,22 @@
-import 'package:blog/common/style/colors.dart';
-import 'package:blog/common/utils/screen.dart';
-
-import 'package:blog/widgets/organisms/menu/menu.dart';
 import 'package:blog/widgets/organisms/page_container/index.dart';
-import 'package:easy_localization/easy_localization.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class AboutPage extends StatefulWidget {
-  AboutPage({Key? key}) : super(key: key);
+class AboutAuthorPage extends StatefulWidget {
+  AboutAuthorPage({Key? key}) : super(key: key);
 
   static String get path => '/about-author';
 
   @override
-  _AboutPageState createState() => _AboutPageState();
+  _AboutAuthorPageState createState() => _AboutAuthorPageState();
 }
 
-class _AboutPageState extends State<AboutPage> {
+class _AboutAuthorPageState extends State<AboutAuthorPage> {
   @override
   Widget build(BuildContext context) {
     return PageContainer(
-      pageTitle: 'aboutAuthorPage.title'.tr(),
+      pageTitle: 'About author',
       pageBody: Column(
         children: [
           Text(''),
