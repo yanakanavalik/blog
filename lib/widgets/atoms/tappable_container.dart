@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 class TappableContainer extends StatelessWidget {
   TappableContainer({
     required this.child,
+    required this.onTap,
     this.padding = const EdgeInsets.all(16.0),
     this.margin = const EdgeInsets.all(16.0),
     this.width = 0.0,
@@ -14,6 +15,7 @@ class TappableContainer extends StatelessWidget {
   final EdgeInsets padding;
   final EdgeInsets margin;
   final double width;
+  final VoidCallback onTap;
 
   @override
   Widget build(BuildContext context) {
@@ -25,10 +27,8 @@ class TappableContainer extends StatelessWidget {
       padding: padding,
       margin: margin,
       width: width,
-      child: GestureDetector(
-        onTap: () {
-          print("Tapped a Container");
-        },
+      child: InkWell(
+        onTap: onTap,
         child: child,
       ),
     );

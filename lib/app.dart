@@ -1,7 +1,8 @@
 import 'package:blog/widgets/pages/article_page/index.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
-
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'widgets/pages/article_page/article_page_bloc.dart';
 import 'widgets/pages/index.dart';
 
 class App extends StatelessWidget {
@@ -22,7 +23,12 @@ class App extends StatelessWidget {
       },
       onGenerateRoute: (settings) {
         if (settings.name == HomePage.path) {
-          return MaterialPageRoute(builder: (context) => HomePage());
+          return MaterialPageRoute(
+            builder: (context) => BlocProvider(
+              create: (_) => HomePageBloc(),
+              child: HomePage(),
+            ),
+          );
         } else if (settings.name == AboutAuthorPage.path) {
           return MaterialPageRoute(builder: (context) => AboutAuthorPage());
         } else if (settings.name == DogPage.path) {
@@ -32,9 +38,16 @@ class App extends StatelessWidget {
         var uri = Uri.parse(settings.name ?? '');
         if (uri.pathSegments.length == 2 &&
             uri.pathSegments.first == 'article') {
-          var id = uri.pathSegments[1];
+
           return MaterialPageRoute(
-            builder: (context) => ArticlePage(id: id),
+            builder: (context) => BlocProvider(
+              create: (_) => ArticlePageBloc(),
+              child: ArticlePage(
+                parameter: ArticlePageParameter(
+                  id:  settings.arguments as int,
+                ),
+              ),
+            ),
           );
         }
 

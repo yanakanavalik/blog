@@ -2,6 +2,7 @@ import 'package:blog/widgets/organisms/page_container/index.dart';
 
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class DogPage extends StatefulWidget {
   DogPage({Key? key}) : super(key: key);
@@ -19,7 +20,10 @@ class _DogPageState extends State<DogPage> {
       pageTitle: 'Doggy bloggy',
       pageBody: Column(
         children: [
-          Text('Articles'),
+          Text(
+            'Articles',
+            style: GoogleFonts.poppins(fontWeight: FontWeight.bold),
+          ),
         ],
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:blog/common/style/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
+import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class Socials extends StatelessWidget {
@@ -37,7 +38,10 @@ class Socials extends StatelessWidget {
 
   Widget _createButton({String label = "", String launchUrl = ""}) {
     return new TextButton(
-      child: new Text(label),
+      child: new Text(
+        label,
+        style: GoogleFonts.poppins(),
+      ),
       onPressed: () => launch(launchUrl),
       style: TextButton.styleFrom(
         textStyle: TextStyle(fontSize: 20.0, fontWeight: FontWeight.bold),
