@@ -1,33 +1,54 @@
-import 'package:blog/common/style/colors.dart';
+import 'package:blog/common/style/font-styles.dart';
 import 'package:blog/common/utils/screen.dart';
+import 'package:blog/core/entities/article_summary.dart';
 import 'package:blog/widgets/atoms/tappable_container.dart';
 import 'package:flutter/widgets.dart';
 
+import 'package:intl/intl.dart';
+
 class ArticlePreview extends StatelessWidget {
+  ArticlePreview({
+    required this.articleSummary,
+  });
+
+  final ArticleSummary articleSummary;
+
   @override
   Widget build(BuildContext context) {
     return TappableContainer(
       padding: const EdgeInsets.symmetric(vertical: 30.0, horizontal: 55.0),
-      width: getScreenWidth(context: context) / 3,
+      margin: EdgeInsets.only(
+        right: getScreenWidth(context: context) / 4,
+        left: 16.0,
+        bottom: 16.0,
+        top: 16.0,
+      ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Title of article',
-            style:
-                TextStyle(color: tumbleweedColor, fontWeight: FontWeight.bold),
+            articleSummary.title,
+            style: titleST,
           ),
-          const SizedBox(height: 8.0),
+          const SizedBox(height: 1.0),
           Text(
-            'Date when was written',
-            style: TextStyle(color: darkJungleGreenColor),
+            'Date: ${DateFormat('MM-dd-yyyy').format(DateTime.parse(articleSummary.dateCreated))}',
+            style: paragraphST,
           ),
-          const SizedBox(height: 8.0),
-          Text(
-            'Summary',
-            style: TextStyle(color: darkJungleGreenColor),
-          ),
+          if (articleSummary.summary.isNotEmpty)
+            Padding(
+              padding: const EdgeInsets.only(top: 1.0),
+              child: Text(
+                articleSummary.summary,
+                style: paragraphST,
+              ),
+            )
         ],
+      ),
+      onTap: () => Navigator.pushNamed(
+        context,
+        '/article/${articleSummary.id}',
+        arguments: articleSummary.id,
       ),
     );
   }
