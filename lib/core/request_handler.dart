@@ -10,7 +10,7 @@ class RequestHandler {
   }) =>
       http.get(
         Uri.parse(
-            '$_localServerUrl/articles-summaries?start=$offset&limit=$limit'),
+            '$_serverUrl/articles-summaries?start=$offset&limit=$limit'),
         headers: {
           "Accept": "application/json",
           "Access-Control-Allow-Origin": "*",
@@ -21,7 +21,7 @@ class RequestHandler {
     required int id,
   }) =>
       http.get(
-        Uri.parse('$_localServerUrl/article?id=$id'),
+        Uri.parse('$_serverUrl/article?id=$id'),
         headers: {
           "Accept": "application/json",
           "Access-Control-Allow-Origin": "*",

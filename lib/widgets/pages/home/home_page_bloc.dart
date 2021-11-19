@@ -102,7 +102,6 @@ class HomePageBloc extends Bloc<HomePageEvent, HomePageState> {
             articlesOffset: this.state.articlesOffset,
             totalArticles: this.state.totalArticles,
           ));
-          print(_);
         }
       },
     );

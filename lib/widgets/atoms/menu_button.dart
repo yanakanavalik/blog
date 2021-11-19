@@ -41,14 +41,12 @@ class _MenuButtonState extends State<MenuButton> {
   }
 
   void _incrementEnter(PointerEvent details) {
-    print('entered');
     setState(() {
       isHovered = true;
     });
   }
 
   void _incrementExit(PointerEvent details) {
-    print('left');
     setState(() {
       isHovered = false;
     });

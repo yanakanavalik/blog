@@ -66,7 +66,7 @@ class ArticlePageBloc extends Bloc<ArticlePageEvent, ArticlePageState> {
       (event, emit) async {
         try {
           emit(ArticlePageState.loading(articleId: parameter.articleId));
-print(parameter);
+
           if (parameter.articleId == null) {
             emit(ArticlePageState.error());
           }
@@ -89,7 +89,6 @@ print(parameter);
           }
         } catch (_) {
           emit(ArticlePageState.error());
-          print(_);
         }
       },
     );
